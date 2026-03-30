@@ -72,7 +72,7 @@ def input_guard_node(state: ParkingState) -> dict:
     if not is_safe:
         refusal = (
             "I'm sorry, I can only help with parking-related questions. "
-            "Please ask me about CityPark's rates, hours, location, or reservations."
+            "Please ask me about Slytherin's rates, hours, location, or reservations."
         )
         updates["messages"] = [AIMessage(content=refusal)]
         updates["answer"] = refusal
@@ -326,7 +326,7 @@ def output_guard_node(state: ParkingState) -> dict:
     if not is_safe:
         answer = (
             "I'm sorry, I'm unable to provide that information. "
-            "Please contact CityPark customer service at info@citypark.example.com."
+            "Please contact Slytherin customer service at info@Slytherin.example.com."
         )
         return {
             "output_safe": False,

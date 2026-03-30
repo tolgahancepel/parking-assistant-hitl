@@ -10,10 +10,10 @@ from langchain_core.documents import Document
 PARKING_DOCUMENTS = [
     Document(
         page_content=(
-            "CityPark Parking Facility is a modern, multi-level parking structure "
+            "Slytherin Parking Facility is a modern, multi-level parking structure "
             "located in the heart of downtown. We offer 500 parking spaces across "
             "5 floors with 24/7 security surveillance, CCTV coverage on all levels, "
-            "and on-site security personnel. CityPark is fully automated with license "
+            "and on-site security personnel. Slytherin is fully automated with license "
             "plate recognition at entry and exit points. The facility is wheelchair "
             "accessible with elevators on every floor."
         ),
@@ -21,18 +21,18 @@ PARKING_DOCUMENTS = [
     ),
     Document(
         page_content=(
-            "CityPark is located at 42 Central Avenue, Downtown District. "
+            "Slytherin is located at 42 Central Avenue, Downtown District. "
             "The nearest subway stations are Central Station (Line 1, 3-minute walk) "
             "and Commerce Square (Line 2, 5-minute walk). By bus, routes 14, 22, and "
             "57 stop directly in front of the facility. By car, take Exit 7A from "
-            "the highway and follow signs for 'CityPark Downtown'. GPS coordinates: "
+            "the highway and follow signs for 'Slytherin Downtown'. GPS coordinates: "
             "40.7128° N, 74.0060° W."
         ),
         metadata={"doc_id": "location_001", "category": "location"},
     ),
     Document(
         page_content=(
-            "CityPark operating hours: Monday to Friday 6:00 AM – 11:00 PM, "
+            "Slytherin operating hours: Monday to Friday 6:00 AM – 11:00 PM, "
             "Saturday 7:00 AM – 11:00 PM, Sunday and public holidays 8:00 AM – 10:00 PM. "
             "The facility is closed on Christmas Day (December 25). "
             "24-hour access is available for monthly permit holders only. "
@@ -42,7 +42,7 @@ PARKING_DOCUMENTS = [
     ),
     Document(
         page_content=(
-            "CityPark pricing: Standard spaces – $3/hour, $18/day maximum. "
+            "Slytherin pricing: Standard spaces – $3/hour, $18/day maximum. "
             "Compact spaces – $2.50/hour, $15/day maximum. "
             "Electric Vehicle (EV) spaces – $3.50/hour (includes charging), $20/day maximum. "
             "Disabled/accessible spaces – $2/hour, $12/day maximum. "
@@ -54,7 +54,7 @@ PARKING_DOCUMENTS = [
     ),
     Document(
         page_content=(
-            "CityPark offers four types of parking spaces. "
+            "Slytherin offers four types of parking spaces. "
             "Standard spaces (350 total) on floors 1–4 suit regular passenger vehicles up to 5.0m long. "
             "Compact spaces (80 total) on floors 2–3 suit small cars up to 4.0m long, at a lower rate. "
             "Electric Vehicle spaces (50 total) on floor 1 include Tesla and universal Type 2 chargers; "
@@ -77,7 +77,7 @@ PARKING_DOCUMENTS = [
     ),
     Document(
         page_content=(
-            "CityPark accepted payment methods: Visa, Mastercard, American Express, contactless payments "
+            "Slytherin accepted payment methods: Visa, Mastercard, American Express, contactless payments "
             "(Apple Pay, Google Pay), and cash at staffed booths on floors 1 and 2. "
             "Monthly permit holders can set up automatic bank transfers. "
             "All transactions are processed securely. Receipts are provided via email or printed on request. "
@@ -87,7 +87,7 @@ PARKING_DOCUMENTS = [
     ),
     Document(
         page_content=(
-            "CityPark amenities and facilities: Free Wi-Fi throughout the facility. "
+            "Slytherin amenities and facilities: Free Wi-Fi throughout the facility. "
             "Car wash service available on floor 1 (Monday–Saturday, 8:00 AM – 6:00 PM), prices start at $15. "
             "Tyre inflation stations on floors 1 and 3 (free of charge). "
             "CCTV and 24/7 security patrols. Emergency call points on every floor. "
@@ -110,12 +110,12 @@ PARKING_DOCUMENTS = [
     ),
     Document(
         page_content=(
-            "Public contact information for CityPark: "
+            "Public contact information for Slytherin: "
             "Customer service phone: +1 (555) 100-2000 (available during operating hours). "
-            "Customer email: info@citypark.example.com. "
-            "Website: www.citypark.example.com. "
+            "Customer email: info@Slytherin.example.com. "
+            "Website: www.Slytherin.example.com. "
             "Address: 42 Central Avenue, Downtown District, City, 10001. "
-            "For lost property: lostandfound@citypark.example.com."
+            "For lost property: lostandfound@Slytherin.example.com."
         ),
         metadata={"doc_id": "contact_001", "category": "contact"},
     ),

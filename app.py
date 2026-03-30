@@ -1,5 +1,5 @@
 """
-Streamlit chat UI for the CityPark parking assistant.
+Streamlit chat UI for the Slytherin parking assistant.
 
 """
 
@@ -15,7 +15,7 @@ from graph.builder import get_graph
 # Page config
 # ---------------------------------------------------------------------------
 
-st.set_page_config(page_title="CityPark Assistant", layout="centered")
+st.set_page_config(page_title="Slytherin Assistant", layout="centered")
 st.title("🐍 Slytherin Parking Assistant")
 st.caption("Ask me about parking rates, hours, location, or make a reservation.")
 

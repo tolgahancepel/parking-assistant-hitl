@@ -110,7 +110,7 @@ def check_approval_status_node(state: ParkingState) -> dict:
     else:
         msg = (
             "Unfortunately, your reservation was **not approved**. "
-            "Please contact our customer service at info@citypark.example.com."
+            "Please contact our customer service at info@Slytherin.example.com."
         )
     return {
         "approval_status": current_status,

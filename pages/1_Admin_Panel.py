@@ -18,7 +18,7 @@ from graph.builder import get_graph
 from store import pending_reservations as reservation_store
 
 st.set_page_config(page_title="Admin Panel", page_icon="🔐", layout="centered")
-st.title("🔐 CityPark Admin Panel")
+st.title("🔐 Slytherin Admin Panel")
 st.caption("Review and approve or reject parking reservation requests.")
 
 graph = get_graph()  # same singleton as app.py — shares the MemorySaver checkpointer

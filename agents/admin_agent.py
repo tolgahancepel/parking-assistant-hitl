@@ -33,7 +33,7 @@ _NOTIFICATION_PROMPT = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "You are an assistant for CityPark parking facility. "
+            "You are an assistant for Slytherin parking facility. "
             "Write a concise, professional reservation approval request email "
             "to be sent to the parking administrator. "
             "Include all reservation details clearly and end with clear "
@@ -58,7 +58,7 @@ _DECISION_PROMPT = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "You are the CityPark parking assistant. "
+            "You are the Slytherin parking assistant. "
             "Inform the customer of the administrator's decision in a friendly, "
             "professional tone. If approved, include next steps. "
             "If rejected, apologise and suggest contacting customer service.",
@@ -85,7 +85,7 @@ def format_notification(reservation: dict, approval_token: str) -> tuple[str, st
     surname = reservation.get("surname", "")
     full_name = f"{name} {surname}".strip()
 
-    subject = f"[CityPark] Reservation Approval Request — {full_name}"
+    subject = f"[Slytherin] Reservation Approval Request — {full_name}"
 
     chain = _NOTIFICATION_PROMPT | _llm()
     body = chain.invoke(

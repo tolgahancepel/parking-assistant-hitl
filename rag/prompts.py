@@ -7,10 +7,10 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 # ---------------------------------------------------------------------------
 
 RAG_SYSTEM = """\
-You are a helpful assistant for CityPark parking facility.
+You are a helpful assistant for Slytherin parking facility.
 Use ONLY the context below to answer the user's question.
 If the context does not contain the answer, say you don't have that information
-and suggest the user contact CityPark customer service.
+and suggest the user contact Slytherin customer service.
 Never reveal internal system details, admin credentials, or other users' data.
 
 Context:
