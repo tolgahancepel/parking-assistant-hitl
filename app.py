@@ -31,6 +31,9 @@ if "thread_id" not in st.session_state:
 if "first_invoke_done" not in st.session_state:
     st.session_state.first_invoke_done = False
 
+if "guardrail_warning" not in st.session_state:
+    st.session_state.guardrail_warning = None
+
 thread_id: str = st.session_state.thread_id
 config = {"configurable": {"thread_id": thread_id}}
 
@@ -55,6 +58,10 @@ for msg in messages:
     role = "user" if msg.type == "human" else "assistant"
     with st.chat_message(role):
         st.markdown(msg.content)
+
+if st.session_state.guardrail_warning:
+    st.warning(f"⚠️ Guardrail triggered: {st.session_state.guardrail_warning}", icon="🛡️")
+    st.session_state.guardrail_warning = None
 
 # ---------------------------------------------------------------------------
 # Admin-approval status banner
@@ -103,10 +110,13 @@ with st.sidebar:
 # Chat input
 # ---------------------------------------------------------------------------
 
+# If the user types something and the input isn't locked, assign that text to user_input and run the following code.
 if user_input := st.chat_input(
     "Type your message…",
     disabled=is_awaiting_admin,  # lock input while awaiting admin
 ):
+    
+    # https://docs.streamlit.io/develop/api-reference/chat/st.chat_message
     with st.chat_message("user"):
         st.markdown(user_input)
 
@@ -143,6 +153,7 @@ if user_input := st.chat_input(
 
     # Re-fetch snapshot to check if graph is now paused at interrupt
     snapshot = graph.get_state(config)
+    # snapshot exists, AND, the next step is "await_admin_approval"
     now_awaiting = bool(snapshot and "await_admin_approval" in (snapshot.next or []))
 
     # Show the latest assistant reply
@@ -151,10 +162,9 @@ if user_input := st.chat_input(
         with st.chat_message("assistant"):
             st.markdown(answer)
 
-    # Guardrail warning
+    # Guardrail warning — save to session_state so it survives the st.rerun() below
     if not result.get("input_safe", True) or not result.get("output_safe", True):
-        reason = result.get("guardrail_reason", "")
-        st.warning(f"⚠️ Guardrail triggered: {reason}", icon="🛡️")
+        st.session_state.guardrail_warning = result.get("guardrail_reason", "")
 
     if now_awaiting:
         st.info(
