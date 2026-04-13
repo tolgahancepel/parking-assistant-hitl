@@ -123,6 +123,7 @@ def check_approval_status_node(state: ParkingState) -> dict:
 # Graph assembly
 # ---------------------------------------------------------------------------
 
+# returns a runnable graph object that you can execute with input data
 def build_graph() -> StateGraph:
     graph = StateGraph(ParkingState)
 
